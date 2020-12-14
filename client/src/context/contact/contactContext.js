@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const ccontactContext = createContext();
+const contactContext = createContext();
 
 export default contactContext;
