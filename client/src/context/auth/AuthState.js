@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
-import AuthContext from '../contact/authContext';
-import AuthReducer from './authReducer';
+import AuthContext from '../auth/authContext';
+import AuthReducer from '../auth/authReducer';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -56,11 +56,11 @@ const AuthState = (props) => {
         isAuthenticated: state.isAuthenticated,
         loading: state.loading,
         error: state.error,
-        loadUser,
-        registerUser,
-        loginUser,
-        logout,
-        clearError,
+        // loadUser,
+        // registerUser,
+        // loginUser,
+        // logout,
+        // clearError,
       }}
     >
       {props.children}
