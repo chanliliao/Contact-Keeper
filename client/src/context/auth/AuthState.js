@@ -59,10 +59,23 @@ const AuthState = (props) => {
     }
   };
 
-  // // login user
-  // const loginUser = () => {
-  //   dispatch({ type: DELETE_CONTACT, payload:  });
-  // };
+  // login user
+  const loginUser = async (formData) => {
+    const config = {
+      header: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    try {
+      const res = await axios.post('/api/auth', formData, config);
+
+      dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      loadUser();
+    } catch (err) {
+      dispatch({ type: LOGIN_FAIL, payload: err.response.data.msg });
+    }
+  };
 
   // // logout
   // const logout = () => {
@@ -84,7 +97,7 @@ const AuthState = (props) => {
         error: state.error,
         loadUser,
         registerUser,
-        // loginUser,
+        loginUser,
         // logout,
         clearError,
       }}
