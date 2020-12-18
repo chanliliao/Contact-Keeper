@@ -77,10 +77,10 @@ const AuthState = (props) => {
     }
   };
 
-  // // logout
-  // const logout = () => {
-  //   dispatch({ type: LOGOUT, payload:  });
-  // };
+  // logout
+  const logout = () => {
+    dispatch({ type: LOGOUT });
+  };
 
   // clear error
   const clearError = () => {
@@ -98,7 +98,7 @@ const AuthState = (props) => {
         loadUser,
         registerUser,
         loginUser,
-        // logout,
+        logout,
         clearError,
       }}
     >
